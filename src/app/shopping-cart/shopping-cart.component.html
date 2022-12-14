@@ -1,0 +1,29 @@
+
+
+<p>shopping-cart works!</p>
+<div class="container">
+  <div class="divTable div-hover" *ngIf="cartProductList.length">
+
+    <div class="rowTable" *ngFor="let product of cartProductList">
+        <img
+        class="card-img-top"
+        src="{{ product.imageURL }}"
+        alt="Card image cap"
+      />
+      <div class="divTableCol">
+        <div class="media">
+          <a class="pull-left mr-2 ml-0" href="#">
+            <img
+              class="img-fluid"
+              src="{{ product.imageURL }}"
+              style="width: 92px; height: 72px; margin-left: 0"
+          /></a>
+          <div class="media-body">
+            <h5 class="media-heading">{{ product.name }}</h5>
+            <h5 class="media-heading">{{ product.price }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

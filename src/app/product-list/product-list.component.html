@@ -1,0 +1,43 @@
+<div class="container">
+  <form class="d-flex">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      class="form-control"
+      placeholder="Search By Category"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  <div class="row">
+    <div
+      *ngFor="let list of productList | search : searchText; let i = index"
+      class="card"
+      style="width: 15rem"
+    >
+      <img
+        class="card-img-top"
+        src="{{ list.imageURL }}"
+        alt="Card image cap"
+      />
+      <h5 class="card-title">{{ list.name }}</h5>
+      <div class="card-body">
+        <p class="card-text">
+          {{ list.price | currency : "Rs" }}
+        </p>
+        <button type="button" class="btn btn-primary" (click)="addToCart(list)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Color</h1>
+    <ul>
+      <li *ngFor="let color of uniqueColor">
+        <input type="checkbox" />
+        {{ color }}
+      </li>
+    </ul>
+  </div>
+</div>
