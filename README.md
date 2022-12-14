@@ -1,4 +1,5 @@
 # ProductApp
+Follow this for further design and development https://www.geektrust.com/challenge/teerex-store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
